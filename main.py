@@ -19,12 +19,8 @@ def find_password():
         except FileNotFoundError:
             messagebox.showerror(title='Oops', message="Password file does not exist")
         else:
-            print(data)
             for item in data:
-                print(f"item is {item}")
-                print(f"Website is {website}")
                 if item == website:
-                    print("it worked")
                     messagebox.showinfo(title=item, message=f"Email: {data[item]['email']} \nPassword: {data[item]['password']}")
                 else:
                     messagebox.showinfo(title="Oops", message='No details for the website exists')
